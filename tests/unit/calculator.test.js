@@ -1,5 +1,5 @@
 // 단위 테스트: 함수 하나를 격리해서 테스트
-import { add, subtract, multiply, calculate } from "../../src/calculator.js";
+import { add, subtract, multiply, divide, calculate } from "../../src/calculator.js";
 
 describe("add", () => {
     test("두 양수를 더한다", () => {
@@ -34,5 +34,14 @@ describe("multiply", () => {
     });
     test("0과의 곱은 0이다", () => {
         expect(multiply(7, 0)).toBe(0);
+    });
+});
+
+describe("divide", () => {
+    test("두 수를 나눈다", () => {
+        expect(divide(10, 2)).toBe(5);
+    });
+    test("0으로 나누면 에러를 던진다", () => {
+        expect(() => divide(5, 0)).toThrow("0으로 나눌 수 없습니다");
     });
 });
