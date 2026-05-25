@@ -35,5 +35,11 @@ describe("계산기 UI 통합", () => {
         document.querySelector('[data-testid="btn-subtract"]').click();
         expect(document.querySelector('[data-testid="display"]').textContent).toBe("2");
     });
+    test("곱하기 버튼이 두 입력값을 곱해서 display에 표시한다", () => {
+        document.getElementById("inputA").value = "2";
+        document.getElementById("inputB").value = "9";
+        document.querySelector('[data-testid="btn-multiply"]').click();
+        expect(document.querySelector('[data-testid="display"]').textContent).toBe("18");
+    });
 });
 
