@@ -29,4 +29,11 @@ describe("계산기 UI 통합", () => {
         expect(document.getElementById("inputA").value).toBe("");
         expect(document.querySelector('[data-testid="display"]').textContent).toBe("0");
     });
+    test("빼기 버튼이 두 입력값을 빼서 display에 표시한다", () => {
+        document.getElementById("inputA").value = "10";
+        document.getElementById("inputB").value = "8";
+        document.querySelector('[data-testid="btn-subtract"]').click();
+        expect(document.querySelector('[data-testid="display"]').textContent).toBe("2");
+    });
 });
+
